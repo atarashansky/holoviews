@@ -29,6 +29,9 @@ class SankeyPlot(GraphPlot):
     node_width = param.Number(default=15, doc="""
         Width of the nodes.""")
 
+    depth_map = param.Dict(default=None, allow_None=True, doc="""
+        Pre-specifies the depth for each node (key: node, value: depth).""")
+        
     node_padding = param.Integer(default=None, doc="""
         Number of pixels of padding relative to the bounds.""")
 

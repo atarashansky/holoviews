@@ -33,6 +33,9 @@ class SankeyPlot(GraphPlot):
     node_sort = param.Boolean(default=True, doc="""
         Sort nodes in ascending breadth.""")
 
+    depth_map = param.Dict(default=None, allow_None=True, doc="""
+        Pre-specifies the depth for each node (key: node, value: depth).""")        
+
     # Deprecated options
 
     color_index = param.ClassSelector(default=2, class_=(str, int),

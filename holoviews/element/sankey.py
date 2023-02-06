@@ -41,17 +41,26 @@ class _layout_sankey(Operation):
     node_sort = param.Boolean(default=True, doc="""
         Sort nodes in ascending breadth.""")
 
+    depth_map = param.Dict(default=None, allow_None=True, doc="""
+        Pre-specifies the depth for each node (key: node, value: depth).""")
+
     def _process(self, element, key=None):
-        nodes, edges, graph = self.layout(element, **self.p)
+        nodes, edges, graph = self.layout(element,**self.p)
         params = get_param_values(element)
         return Sankey((element.data, nodes, edges), sankey=graph, **params)
 
-    def layout(self, element, **params):
+    def layout(self, element,**params):
         self.p = param.ParamOverrides(self, params)
         graph = {'nodes': [], 'links': []}
         self.computeNodeLinks(element, graph)
         self.computeNodeValues(graph)
-        self.computeNodeDepths(graph)
+        
+        depth_map = self.p.depth_map
+        if depth_map is not None:
+            for node in graph['nodes']:
+                node['depth'] = depth_map[node['index']]
+        else:            
+            self.computeNodeDepths(graph)
         self.computeNodeHeights(graph)
         self.computeNodeBreadths(graph)
         self.computeLinkBreadths(graph)
@@ -153,7 +162,7 @@ class _layout_sankey(Operation):
                     depth_upper_bound - 1,
                     math.floor(
                         node['depth']
-                        if node['sourceLinks']
+                        if node['sourceLinks'] or self.p.depth_map is not None
                         else depth_upper_bound - 1
                     )
                 )
