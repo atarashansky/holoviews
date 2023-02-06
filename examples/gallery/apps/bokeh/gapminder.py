@@ -5,11 +5,11 @@ with custom bokeh widgets to deploy an app.
 
 import pandas as pd
 import numpy as np
-import holoviews as hv
+import holoviews_samap as hv
 import panel as pn
 
 from bokeh.sampledata import gapminder
-from holoviews import dim, opts
+from holoviews_samap import dim, opts
 
 renderer = hv.renderer('bokeh')
 
@@ -54,7 +54,7 @@ def animate_update():
         year = int(start)
     slider.value = year
 
-# Update the holoviews plot by calling update with the new year.
+# Update the holoviews_samap plot by calling update with the new year.
 def slider_update(event):
     hvplot.update((event.new,))
 

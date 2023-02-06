@@ -13,17 +13,17 @@ import param
 param.parameterized.docstring_signature = False
 param.parameterized.docstring_describe_params = False
 
-import holoviews
-version = release = holoviews.__version__
+import holoviews_samap
+version = release = holoviews_samap.__version__
 
-holoviews.extension.inline = False
+holoviews_samap.extension.inline = False
 
 html_theme = 'sphinx_holoviz_theme'
 html_static_path += ['_static']
 html_theme_options = {
     'logo': 'logo.png',
     'favicon': 'favicon.ico',
-    'custom_css': 'holoviews.css',
+    'custom_css': 'holoviews_samap.css',
     'include_logo_text': True,
     'second_nav': True,
     'footer': False
@@ -36,7 +36,7 @@ nbsite_gallery_conf = {
     'backends': ['bokeh', 'matplotlib', 'plotly'],
     'galleries': {},
     'github_org': 'pyviz',
-    'github_project': 'holoviews'
+    'github_project': 'holoviews_samap'
 }
 
 if os.environ.get('HV_DOC_GALLERY') not in ('False', 'false', '0'):
@@ -60,14 +60,14 @@ if os.environ.get('HV_DOC_REF_GALLERY') not in ('False', 'false', '0'):
         ]
     }
 
-MAIN_SITE = '//holoviews.org'
+MAIN_SITE = '//holoviews_samap.org'
 
 html_context.update({
     'PROJECT': project,
     'DESCRIPTION': description,
     'AUTHOR': authors,
     'VERSION': version,
-    'WEBSITE_URL': 'https://holoviews.org', # for canonical link
+    'WEBSITE_URL': 'https://holoviews_samap.org', # for canonical link
     'GOOGLE_SEARCH_ID': '006807479272082416678:p6n_f0d8taw',
     'GOOGLE_ANALYTICS_UA': 'UA-61554933-1',
     # Links
@@ -86,9 +86,9 @@ html_context.update({
     ),
     # Social links
     'SOCIAL': (
-        ('Discourse', '//discourse.holoviz.org/c/holoviews'),
-        ('Twitter', '//twitter.com/holoviews'),
-        ('Github', '//github.com/pyviz/holoviews'),
+        ('Discourse', '//discourse.holoviz.org/c/holoviews_samap'),
+        ('Twitter', '//twitter.com/holoviews_samap'),
+        ('Github', '//github.com/pyviz/holoviews_samap'),
     ),
     # Links for the docs sub navigation
     'NAV': (
@@ -100,5 +100,5 @@ html_context.update({
         ('API', 'reference_manual/index'),
         ('FAQ', 'FAQ')
     ),
-    'js_includes': html_context['js_includes']+['holoviews.js']
+    'js_includes': html_context['js_includes']+['holoviews_samap.js']
 })

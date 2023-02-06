@@ -1,4 +1,4 @@
-import holoviews as hv
+import holoviews_samap as hv
 import panel as pn
 import numpy as np
 

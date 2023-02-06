@@ -2,8 +2,8 @@ import datetime as dt
 
 import psutil
 import pandas as pd
-import holoviews as hv
-from holoviews import dim, opts
+import holoviews_samap as hv
+from holoviews_samap import dim, opts
 
 renderer = hv.renderer('bokeh')
 

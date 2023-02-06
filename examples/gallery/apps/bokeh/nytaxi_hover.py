@@ -17,11 +17,11 @@ You can now run this app with:
 
 """
 import numpy as np
-import holoviews as hv
+import holoviews_samap as hv
 import dask.dataframe as dd
 
-from holoviews import opts
-from holoviews.operation.datashader import aggregate
+from holoviews_samap import opts
+from holoviews_samap.operation.datashader import aggregate
 
 hv.extension('bokeh')
 renderer = hv.renderer('bokeh')

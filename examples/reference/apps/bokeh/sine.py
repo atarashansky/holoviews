@@ -8,8 +8,8 @@ frequency and phase dimensions, which can be varied using sliders.
 """
 
 import numpy as np
-import holoviews as hv
-import holoviews.plotting.bokeh
+import holoviews_samap as hv
+import holoviews_samap.plotting.bokeh
 
 renderer = hv.renderer('bokeh')
 xs = np.linspace(0, np.pi*2)

@@ -9,8 +9,8 @@ The app can be served using:
 """
 
 import numpy as np
-import holoviews as hv
-from holoviews.streams import Selection1D
+import holoviews_samap as hv
+from holoviews_samap.streams import Selection1D
 
 renderer = hv.renderer('bokeh')
 hv.opts("Points [tools=['box_select']]")

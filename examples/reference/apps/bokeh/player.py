@@ -10,7 +10,7 @@ The app can be served using:
 
 """
 import numpy as np
-import holoviews as hv
+import holoviews_samap as hv
 
 from bokeh.io import curdoc
 from bokeh.layouts import layout

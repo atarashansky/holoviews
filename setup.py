@@ -143,8 +143,8 @@ def get_setup_version(reponame):
 
 setup_args.update(
     dict(
-        name="holoviews",
-        version=get_setup_version("holoviews"),
+        name="holoviews_samap",
+        version=get_setup_version("holoviews_samap"),
         python_requires=">=2.7",
         install_requires=install_requires,
         extras_require=extras_require,
@@ -152,13 +152,13 @@ setup_args.update(
         long_description=open("README.md").read(),
         long_description_content_type="text/markdown",
         author="Jean-Luc Stevens and Philipp Rudiger",
-        author_email="holoviews@gmail.com",
+        author_email="tarashanst@gmail.com",
         maintainer="PyViz Developers",
         maintainer_email="developers@pyviz.org",
         platforms=["Windows", "Mac OS X", "Linux"],
         license="BSD",
-        url="https://www.holoviews.org",
-        entry_points={"console_scripts": ["holoviews = holoviews.util.command:main"]},
+        url="https://www.holoviews_samap.org",
+        entry_points={"console_scripts": ["holoviews_samap = holoviews_samap.util.command:main"]},
         packages=find_packages(),
         include_package_data=True,
         classifiers=[
@@ -181,7 +181,7 @@ setup_args.update(
 
 if __name__ == "__main__":
     example_path = os.path.join(
-        os.path.dirname(os.path.abspath(__file__)), "holoviews/examples"
+        os.path.dirname(os.path.abspath(__file__)), "holoviews_samap/examples"
     )
 
     if "develop" not in sys.argv and "egg_info" not in sys.argv:
@@ -191,7 +191,7 @@ if __name__ == "__main__":
         header = "HOLOVIEWS INSTALLATION INFORMATION"
         bars = "=" * len(header)
 
-        extras = "\n".join("holoviews[%s]" % e for e in setup_args["extras_require"])
+        extras = "\n".join("holoviews_samap[%s]" % e for e in setup_args["extras_require"])
 
         print("%s\n%s\n%s" % (bars, header, bars))
 
@@ -200,7 +200,7 @@ if __name__ == "__main__":
         print("Users should consider using one of these options.\n")
         print("By default only a core installation is performed and ")
         print("only the minimal set of dependencies are fetched.\n\n")
-        print("For more information please visit http://holoviews.org/install.html\n")
+        print("For more information please visit http://holoviews_samap.org/install.html\n")
         print(bars + "\n")
 
     setup(**setup_args)
